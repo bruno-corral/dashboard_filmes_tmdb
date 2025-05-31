@@ -39,10 +39,7 @@ const getGenres = async () => {
 const changeMovies = async (movie) => {
   try {
     const response = await api.getSearchedMovie(movie);
-    console.log(response);
-
     movies.value = response.data.results;
-    // console.log(movies);
   } catch (error) {
     console.error('Erro ao buscar filmes:', error);
   }
@@ -51,8 +48,6 @@ const changeMovies = async (movie) => {
 onMounted(() => {
   getMovies();
   getGenres();
-
-  // changeMovies();
 });
 
 </script>
