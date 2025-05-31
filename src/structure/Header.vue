@@ -15,7 +15,7 @@ let menuAberto = ref(false);
                 </div>
                 <nav class="hidden md:flex space-x-6">
                     <RouterLink to="/" class="text-gray-700 hover:text-blue-600 transition-colors">Início</RouterLink>
-                    <RouterLink to="/" class="text-gray-700 hover:text-blue-600 transition-colors">Filmes</RouterLink>
+                    <RouterLink to="/my-favorite-movies" class="text-gray-700 hover:text-blue-600 transition-colors">Filmes</RouterLink>
                 </nav>
                 <div class="hidden md:block">
                     <button class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition cursor-pointer">Add Movie</button>
