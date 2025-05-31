@@ -36,11 +36,9 @@
             }
         },
 
-
-
         async showFavoriteMovies() {
             try {
-                const response = await axios.get(`${url}/movies/search/favorite-movies`);
+                const response = await axios.get(`${url}/movies/search/favorite/movies/`);
                 return response.data;
             } catch (error) {
                 console.error(error);

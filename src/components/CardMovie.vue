@@ -7,12 +7,12 @@ const props = defineProps(['movies'])
     <div 
       v-for="movie in movies" 
       :key="movie.id" 
-      class="bg-green-400 p-4 rounded shadow"
+      class="bg-[#42b983] p-4 rounded shadow"
     >
-      <p class="font-medium">{{ movie.title }}</p>
+      <p class="font-medium text-white">{{ movie.title }}</p>
       <div class="flex justify-between py-2">
-        <p class="text-sm text-white bg-amber-400 p-1 rounded-md">Vote average - {{ movie.vote_average.toFixed(1) }}</p>
-        <p class="text-sm text-white bg-amber-400 p-1 rounded-md">Populariy - {{ movie.popularity.toFixed(1) }}</p>
+        <p class="text-sm text-black font-semibold bg-amber-400 p-1 rounded-md">Vote average - {{ movie.vote_average.toFixed(1) }}</p>
+        <p class="text-sm text-black font-semibold bg-amber-400 p-1 rounded-md">Populariy - {{ movie.popularity.toFixed(1) }}</p>
       </div>
     </div>
   </div>

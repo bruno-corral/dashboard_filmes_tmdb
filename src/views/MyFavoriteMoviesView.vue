@@ -36,7 +36,7 @@ onMounted(() => {
 <template>
   <div class="container">
     <div class="flex justify-between pb-5">
-      <h1 class="text-2xl font-bold mb-4 p-3">Favorite Movies</h1>
+      <h1 class="text-2xl font-bold mb-4 p-3">My Movies</h1>
       <SelectGenres :genres="genres" />
     </div>
     <CardMovie :movies="movies"  />

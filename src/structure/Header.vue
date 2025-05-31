@@ -11,14 +11,14 @@ let menuAberto = ref(false);
         <div class="container max-w-2xl md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <RouterLink to="/" class="md:text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">My Favorite Movies</RouterLink>
+                    <RouterLink to="/" class="md:text-xl font-bold text-gray-800 hover:text-[#42b983] transition-colors">My Favorite Movies</RouterLink>
                 </div>
                 <nav class="hidden md:flex space-x-6">
-                    <RouterLink to="/" class="text-gray-700 hover:text-blue-600 transition-colors">Início</RouterLink>
-                    <RouterLink to="/my-favorite-movies" class="text-gray-700 hover:text-blue-600 transition-colors">Filmes</RouterLink>
+                    <RouterLink to="/" class="text-gray-700 hover:text-[#42b983] transition-colors">Begin</RouterLink>
+                    <RouterLink to="/my-favorite-movies" class="text-gray-700 hover:text-[#42b983] transition-colors">My Movies</RouterLink>
                 </nav>
                 <div class="hidden md:block">
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition cursor-pointer">Add Movie</button>
+                    <button class="bg-[#42b983] text-white px-4 py-2 rounded-lg shadow hover:bg-[#42b983] transition cursor-pointer">Add Movie</button>
                 </div>
                 <div class="md:hidden">
                     <button @click="menuAberto = !menuAberto" type="button" class="text-gray-800 focus:outline-none">
