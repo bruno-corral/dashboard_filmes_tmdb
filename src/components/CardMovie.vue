@@ -11,8 +11,8 @@ const props = defineProps(['movies'])
     >
       <p class="font-medium text-white">{{ movie.title }}</p>
       <div class="flex justify-between py-2">
+        <p class="text-sm text-black font-semibold bg-amber-400 p-1 rounded-md">ID Movie - {{ movie.id }}</p>
         <p class="text-sm text-black font-semibold bg-amber-400 p-1 rounded-md">Vote average - {{ movie.vote_average.toFixed(1) }}</p>
-        <p class="text-sm text-black font-semibold bg-amber-400 p-1 rounded-md">Populariy - {{ movie.popularity.toFixed(1) }}</p>
       </div>
     </div>
   </div>

@@ -12,16 +12,21 @@ const getMovies = async () => {
     const response = await api.movies();
     movies.value = response.data.results;
   } catch (error) {
-    console.error('Erro ao buscar filmes:', error);
+    console.error('Error searching for movies:', error);
   }
 }
 
 const changeMovies = async (movie) => {
   try {
+    if (!movie) {
+      alert('Search cannot be empty!');
+      return;
+    }
+
     const response = await api.getSearchedMovie(movie);
     movies.value = response.data.results;
   } catch (error) {
-    console.error('Erro ao buscar filmes:', error);
+    console.error('Error searching for movies:', error);
   }
 }
 
@@ -36,7 +41,6 @@ onMounted(() => {
     <div class="flex justify-between pb-5">
       <h1 class="text-2xl font-bold mb-4 p-3">Movies</h1>
       <InputSearchMovie @searchMovie="changeMovies" />
-      <!-- <SelectGenres :genres="genres" /> -->
     </div>
     <CardMovie :movies="movies"  />
   </div>

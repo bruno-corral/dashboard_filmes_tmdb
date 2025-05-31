@@ -4,11 +4,9 @@
     const url = import.meta.env.VITE_API_URL;
 
     export const api = {
-        async movies(movie) {
+        async movies() {
             try {
-                const response = await axios.get(`${url}/movies`, {
-                    movie
-                });
+                const response = await axios.get(`${url}/movies`);
                 return response.data;
             } catch (error) {
                 console.error(error);
@@ -39,6 +37,17 @@
         async showFavoriteMovies() {
             try {
                 const response = await axios.get(`${url}/movies/search/favorite/movies/`);
+                return response.data;
+            } catch (error) {
+                console.error(error);
+                throw error;
+            }
+        },
+        async postFavoriteMovie(movieId) {
+            try {
+                const response = await axios.post(`${url}/movies/add-movie`, {
+                    movieId
+                });
                 return response.data;
             } catch (error) {
                 console.error(error);
