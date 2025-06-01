@@ -3,6 +3,7 @@ import { api } from '@/services/api.vue';
 import { ref } from 'vue';
 
 let movieId = ref('');
+let message = ref('');
 
 const postFavoriteMovie = async (movieId) => {
   try {
@@ -11,7 +12,7 @@ const postFavoriteMovie = async (movieId) => {
     }
 
     const response = await api.postFavoriteMovie(movieId);
-    console.log(response.message);
+    message.value = response.message;
   } catch (error) {
     console.error('Error saving movies:', error);
   }
@@ -30,6 +31,7 @@ const postFavoriteMovie = async (movieId) => {
                 Search
             </button>
         </div>
+        <p v-if="message" class="text-green-500 mt-2 font-bold">{{ message }}</p>
     </div>
 </template>
 
