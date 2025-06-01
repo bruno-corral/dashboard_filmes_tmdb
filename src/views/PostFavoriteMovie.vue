@@ -22,17 +22,19 @@ const postFavoriteMovie = async (movieId) => {
 </script>
 
 <template>
-    <div class="container">
-        <h1 class="text-2xl font-bold mb-4 p-3">Add Favorite Movie</h1>
+    <div class="flex justify-center items-center h-[100%]">
+      <div class="w-[88%]">
+        <h1 class="text-sm sm:text-lg md:text-2xl text-center md:text-left font-bold mb-2 sm:mb-4">Add Favorite Movie</h1>
 
-        <div class="flex gap-2">
+        <div class="flex flex-col sm:flex-row gap-2 p-3">
             <input class="border border-gray-300 text-gray-900 text-sm outline-none rounded-2xl focus:ring-[#42b983] focus:border-[#52b989] py-1 px-2 w-full" type="text" placeholder="ID Movie" v-model="movieId">
-            <button class="bg-[#42b983] text-white px-4 py-2 rounded-lg shadow hover:bg-[#52b989] transition cursor-pointer"
+            <button class="bg-[#42b983] text-white px-8 md:px-15 py-2 rounded-lg shadow hover:bg-[#52b989] transition cursor-pointer"
                 @click="postFavoriteMovie(movieId)">
-                Search
+                Add
             </button>
         </div>
-        <p v-if="message" class="text-green-500 mt-2 font-bold">{{ message }}</p>
+        <p v-if="message" class="text-[#42b983] mt-2 font-bold text-center text-[12px] sm:text-sm md:text-base">{{ message }}</p>
+      </div>
     </div>
 </template>
 

@@ -64,28 +64,28 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container">
-    <div class="flex justify-between pb-5">
-      <h1 class="text-2xl font-bold mb-4 p-3">Favorite Movies</h1>
+  <div class="flex flex-col md:flex-row justify-between pb-5">
+    <h1 class="text-center lg:text-left text-xl md:text-2xl font-bold mb-4 p-3">Favorite Movies</h1>
+    <div class="flex items-center justify-end md:w-[20%]">
       <SelectGenres :genres="genres" @getMoviesByGenre="changeFavoriteMovies" />
     </div>
-    <CardMovie :movies="movies"  />
-    <div class="flex justify-center my-5">
-      <button 
-        @click="handleReturnPage(currentPage - 1)" 
-        class="bg-[#42b983] text-white px-2 py-1 m-2 rounded-lg shadow hover:bg-[#52b989] transition cursor-pointer"
-        :disabled="currentPage === 1"
+  </div>
+  <CardMovie :movies="movies"  />
+  <div class="flex justify-center my-5">
+    <button 
+      @click="handleReturnPage(currentPage - 1)" 
+      class="bg-[#42b983] text-white font-bold px-2 py-1 m-2 rounded-lg shadow hover:bg-[#52b989] transition cursor-pointer"
+      :disabled="currentPage === 1"
+    >
+      <
+    </button> 
+    <div class="flex justify-center items-center text-[13px] sm:text-sm md:text-base">Page {{ currentPage }} of {{ lastPage }}</div> 
+    <button 
+      @click="handleGoPage(currentPage + 1)" 
+      class="bg-[#42b983] text-white font-bold px-2 py-1 m-2 rounded-lg shadow hover:bg-[#52b989] transition cursor-pointer"
+      :disabled="currentPage === lastPage"
+    >
       >
-        <
-      </button> 
-      <div class="flex justify-center items-center">Page {{ currentPage }} of {{ lastPage }}</div> 
-      <button 
-        @click="handleGoPage(currentPage + 1)" 
-        class="bg-[#42b983] text-white px-2 py-1 m-2 rounded-lg shadow hover:bg-[#52b989] transition cursor-pointer"
-        :disabled="currentPage === lastPage"
-      >
-        >
-      </button>
-    </div>
+    </button>
   </div>
 </template>

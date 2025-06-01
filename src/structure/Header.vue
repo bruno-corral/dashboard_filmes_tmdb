@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router'
 
-let menuAberto = ref(false);
+let menuOpening = ref(false);
 
 </script>
 
@@ -23,7 +23,7 @@ let menuAberto = ref(false);
                     </RouterLink>
                 </div>
                 <div class="md:hidden">
-                    <button @click="menuAberto = !menuAberto" type="button" class="text-gray-800 focus:outline-none">
+                    <button @click="menuOpening = !menuOpening" type="button" class="text-gray-800 focus:outline-none">
                     <svg  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -32,9 +32,10 @@ let menuAberto = ref(false);
             </div>
         </div>
 
-        <div v-if="menuAberto" class="md:hidden px-4 pb-4 space-y-2">
-            <RouterLink to="/" class="block text-gray-700 hover:text-blue-600 text-center transition-colors">Início</RouterLink>
-            <RouterLink to="/my-favorite-movies" class="block text-gray-700 hover:text-blue-600 text-center transition-colors">Filmes</RouterLink>
+        <div v-if="menuOpening" class="md:hidden px-4 pb-4 space-y-2">
+            <RouterLink to="/" class="block text-gray-700 hover:text-[#42b983] text-center transition-colors">Begin</RouterLink>
+            <RouterLink to="/my-favorite-movies" class="block text-gray-700 hover:text-[#42b983] text-center transition-colors">Favorite Movies</RouterLink>
+            <RouterLink to="/post-favorite-movie" class="block text-gray-700 hover:text-[#42b983] text-center transition-colors">Add Favorite Movie</RouterLink>
         </div>
     </header>
 
