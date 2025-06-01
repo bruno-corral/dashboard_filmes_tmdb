@@ -9,6 +9,7 @@ const postFavoriteMovie = async (movieId) => {
   try {
     if (!movieId) {
       alert('Fill in the movie ID Movie!');
+      return;
     }
 
     const response = await api.postFavoriteMovie(movieId);
