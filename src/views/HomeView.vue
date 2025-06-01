@@ -27,7 +27,7 @@ const changeMovies = async (movie) => {
         title: 'Error!',
         text: 'Search cannot be empty!',
         icon: 'error',
-        confirmButtonText: 'Cool'
+        confirmButtonText: 'Ok'
       });
       return;
     }
