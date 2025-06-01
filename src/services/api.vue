@@ -4,9 +4,9 @@
     const url = import.meta.env.VITE_API_URL;
 
     export const api = {
-        async movies() {
+        async movies(currentPage) {
             try {
-                const response = await axios.get(`${url}/movies`);
+                const response = await axios.get(`${url}/movies/${currentPage}`);
                 return response.data;
             } catch (error) {
                 console.error(error);
