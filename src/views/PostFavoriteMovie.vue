@@ -1,5 +1,6 @@
 <script setup>
 import { api } from '@/services/api.vue';
+import Swal from 'sweetalert2';
 import { ref } from 'vue';
 
 let movieId = ref('');
@@ -8,7 +9,12 @@ let message = ref('');
 const postFavoriteMovie = async (movieId) => {
   try {
     if (!movieId) {
-      alert('Fill in the movie ID Movie!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Fill in the ID Movie!',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      });
       return;
     }
 

@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue';
+import Swal from 'sweetalert2';
 import { api } from '@/services/api.vue';
 import CardMovie from '@/components/CardMovie.vue';
-
 import InputSearchMovie from '@/components/InputSearchMovie.vue';
 
 const movies = ref([]);
@@ -23,7 +23,12 @@ const getMovies = async () => {
 const changeMovies = async (movie) => {
   try {
     if (!movie) {
-      alert('Search cannot be empty!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Search cannot be empty!',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      });
       return;
     }
 
