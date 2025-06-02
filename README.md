@@ -32,6 +32,11 @@ git clone https://github.com/bruno-corral/dashboard_filmes_tmdb/
 cd dashboard_filmes_tmdb
 ```
 
+### Configurando o arquivo `.env`
+```bash
+cp .env.example .env
+```
+
 ---
 
 ### Executando o npm install
