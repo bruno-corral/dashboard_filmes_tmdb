@@ -42,7 +42,7 @@ const postFavoriteMovie = async (movieId) => {
         <div class="flex flex-col sm:flex-row gap-2 p-3">
             <input 
               class="border border-gray-300 text-gray-900 text-sm outline-none rounded-2xl focus:ring-[#42b983] focus:border-[#52b989] py-1 px-2 w-full" 
-              type="text" 
+              type="number" 
               placeholder="ID Movie" 
               v-model="movieId"
             >
